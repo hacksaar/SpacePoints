@@ -1,0 +1,41 @@
+<div class="page-header">
+  <%= image_tag(gravatar_url_for(@hacker.email)) %> <%= @hacker.nickname %>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    <span class="points-badge">Guthaben:
+      <span class="badge points remaining_points">
+        <%= @hacker.remaining_points %>
+      </span>
+    </span>
+  </div>
+  <div class="col-md-8">
+    <span class="points-badge">Insgesamt jemals gesammelt:
+      <span class="badge points all_earned_points">
+        <%= @hacker.all_earned_points %>
+      </span>
+    </span>
+    <br/>
+    <span class="points-badge">Davon in den letzten 90 Tagen gesammelt: 
+      <span class="badge points recent_earned_points">
+        <%= @hacker.recent_earned_points %>
+      </span> 
+    </span>
+    <br/>
+    <span class="points-badge">Bereits eingelöst: 
+      <span class="badge points all_redeemed_points">
+        <%= @hacker.all_redeemed_points %>
+      </span>
+    </span>
+  </div>
+</div>
+
+<h2>Punkte erarbeitet</h2>
+<%= render :partial => 'quests',    :locals => {:quests  => @quests} %>
+
+<h2>Punkte einlösen</h2>
+<%= render :partial => 'rewards',   :locals => {:rewards => @rewards} %>
+
+<h2>Verlauf</h2>
+<%= render :partial => 'chronicle', :locals => {:chronicle  => @chronicle}  %>

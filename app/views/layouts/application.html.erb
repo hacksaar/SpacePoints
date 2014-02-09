@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SpacePoints</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <nav class="navbar navbar-inverse" role="navigation">
+  <a class="navbar-brand" href="/">SpacePoints</a>
+  </nav>
+  <div class="container">
+    <%= yield %>
+  </div>
+
+
+<%= login_or_username %>
+</body>
+</html>

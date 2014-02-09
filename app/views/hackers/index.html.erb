@@ -1,0 +1,32 @@
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#">recent points</a></li>
+  <li><a href="#">all points</a></li>
+  <li><a href="#">nickname</a></li>
+</ul>
+
+
+<% @hackers.in_groups_of(5) do |hackers| %>
+  <div class="row">
+    <% hackers.each do |hacker| %>
+      <% if hacker.present? %>
+        <a href="<%= hacker_path(hacker) %>">
+          <div class="well hacker-flair col-md-2">
+            <%= image_tag gravatar_url_for(hacker.email) %>
+            <%= hacker.nickname %> 
+            <br/>
+            <span class="badge points recent_earned_points" title="Kürzlich verdiente Punkte">
+              <%= hacker.recent_earned_points %> 
+            </span>
+            <br/>
+            <span class="badge points all_earned_points" title="Alle Punkte">
+              <%= hacker.all_earned_points %> 
+            </span>
+          </div>
+        </a>
+      <% else %>
+        <!-- CSS platzhalter -->
+      <% end %> 
+    <% end %>
+  </div>
+<% end %>
+

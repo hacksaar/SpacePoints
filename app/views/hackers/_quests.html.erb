@@ -1,0 +1,17 @@
+
+<% quests.in_groups_of(10) do |grouped_quests| %>
+  <div class="row">
+    <% grouped_quests.each do |quest| %>
+      <% if quest.present? %>
+        <div class="well col-md-2">
+          <h4>
+            <%= quest.title %>
+          </h4>
+          <!-- TODO: should be replaced with paperclip gem -->
+          <span class="glyphicon <%= quest.image_url %>"> </span>
+          <%= quest.points %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
