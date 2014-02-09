@@ -5,6 +5,23 @@ SpacePunkte::Application.routes.draw do
 
   resources :hackers
 
+  resource :chronicle, :only => [:show]
+
+
+  resources :earnings, :only => [] do
+    member do
+      post :cancel
+    end
+  end
+
+
+  resources :redemptions, :only => [] do
+    member do
+      post :cancel
+    end
+  end
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

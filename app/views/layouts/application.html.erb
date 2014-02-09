@@ -11,10 +11,9 @@
   <a class="navbar-brand" href="/">SpacePoints</a>
   </nav>
   <div class="container">
-    <%= yield %>
+  <%= yield %>
   </div>
 
-
-<%= login_or_username %>
+  <%= login_or_username %> | <%= link_to 'Historie', chronicle_path %>
 </body>
 </html>

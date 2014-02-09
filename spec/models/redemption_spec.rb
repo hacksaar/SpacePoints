@@ -12,6 +12,9 @@ describe Redemption do
     Redemption.new
   end
 
+  let(:normal_redemption) do
+    FactoryGirl.create(:redemption)
+  end
   context 'associations' do
     it 'should have a user which is instance of hacker' do
       redemption.build_user.should be_kind_of(Hacker)
@@ -24,4 +27,13 @@ describe Redemption do
       negative_points_redemption.errors[:points].should be_present
     end
   end # validations
+
+
+  describe '#cancel!' do
+    it 'should produce a cancel object' do
+      normal_redemption.cancel.should be_blank
+      normal_redemption.cancel!.should be_true
+      normal_redemption.cancel.should be_present
+    end
+  end # #cancel!
 end

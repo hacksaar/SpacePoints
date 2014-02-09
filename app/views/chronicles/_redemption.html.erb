@@ -1,0 +1,23 @@
+<div class="list-group-item list-group-item-warning row">
+  <span class="col-md-1"></span>
+  <span class="col-md-1">
+    +<%= entry.points %>
+  </span>
+  <span class="col-md-2">
+    <%= l(entry.created_at, :format => :short) %>
+  </span>
+  <span class="col-md-4">
+    <%= entry.chronicle_text %>
+  </span>
+  <% if entry.cancel.blank? %>
+  <span class="btn  btn-danger col-md-2">
+    <%= link_to 'Storno', cancel_redemption_path(entry), :method => :post %>
+  </span>
+<% end %>
+</div>
+<% if entry.cancel.present? %>
+  <%= render({
+    :partial => 'hackers/chronicle/redemption_cancel', 
+    :locals  => {:entry => entry.cancel} 
+  }) %>
+<% end %>

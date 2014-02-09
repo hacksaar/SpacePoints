@@ -18,4 +18,12 @@ class Earning < ActiveRecord::Base
   has_one(:cancel, lambda { where(:subject_type => 'Earning') }, {
     :foreign_key => :subject_id
   })
+
+
+  def cancel!
+    self.create_cancel({
+      :subject => self,
+      :chronicle_text => "Korrektur: #{self.chronicle_text}"
+    })
+  end
 end
