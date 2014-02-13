@@ -7,4 +7,7 @@ class Quest < ActiveRecord::Base
   validates :points, :title, :presence => true
 
   validates :points, :numericality => {:greater_than => 0}
+
+  def solve(hacker)
+  end
 end

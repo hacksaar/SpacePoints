@@ -4,7 +4,11 @@ class EarningsController < ApplicationController
 
   # TODO user should be set
   def cancel
-    @earning.cancel!
+    if hacker_signed_in?
+    @earning.cancel!(current_hacker)
+    else
+      @earning.cancel!
+    end
     redirect_to :back
   end
 

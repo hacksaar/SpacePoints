@@ -39,6 +39,7 @@ group :development do
   gem 'ffaker'
   gem 'factory_girl_rails', :require => false
   gem 'rspec-rails'
+  gem 'guard', :git => 'https://github.com/guard/guard.git'
   gem 'guard-rspec'
   gem 'guard-bundler'
 end

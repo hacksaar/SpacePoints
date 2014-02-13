@@ -8,5 +8,9 @@ FactoryGirl.define do
     nickname { generate(:nickname) }
     email    { Faker::Internet.email }
     password {'test1234'}
+
+    trait :cool_kim do
+      nickname 'KimCM'
+    end
   end
 end

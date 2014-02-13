@@ -20,8 +20,9 @@ class Earning < ActiveRecord::Base
   })
 
 
-  def cancel!
+  def cancel!(hacker = nil)
     self.create_cancel({
+      :user    => hacker,
       :subject => self,
       :chronicle_text => "Korrektur: #{self.chronicle_text}"
     })

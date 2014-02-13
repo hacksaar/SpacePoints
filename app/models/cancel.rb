@@ -9,7 +9,7 @@ class Cancel < ActiveRecord::Base
   belongs_to :hacker
 
   # Benutzer der diese Buchung durchführt hat
-  belongs_to :user
+  belongs_to :user, :class_name => 'Hacker'
 
 
   belongs_to(:subject, {

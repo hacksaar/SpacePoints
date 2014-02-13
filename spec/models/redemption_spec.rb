@@ -15,6 +15,10 @@ describe Redemption do
   let(:normal_redemption) do
     FactoryGirl.create(:redemption)
   end
+
+  let(:hacker) do
+    FactoryGirl.create(:hacker)
+  end
   context 'associations' do
     it 'should have a user which is instance of hacker' do
       redemption.build_user.should be_kind_of(Hacker)
@@ -34,6 +38,16 @@ describe Redemption do
       normal_redemption.cancel.should be_blank
       normal_redemption.cancel!.should be_true
       normal_redemption.cancel.should be_present
+    end
+
+    it 'should allow anonym cancel' do
+      normal_redemption.cancel!.should be_true
+      normal_redemption.cancel.user.should be_blank
+    end
+
+    it 'should allow to cancel as user' do
+      normal_redemption.cancel!(hacker).should be_true
+      normal_redemption.cancel.user.should be(hacker)
     end
   end # #cancel!
 end
