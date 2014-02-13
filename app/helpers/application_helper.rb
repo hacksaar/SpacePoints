@@ -10,7 +10,7 @@ module ApplicationHelper
     if current_hacker.blank?
       link_to 'Einloggen', new_hacker_session_path 
     else
-      current_hacker.nickname
+      link_to current_hacker.nickname, current_hacker
     end
   end
 end

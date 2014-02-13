@@ -9,7 +9,7 @@
     <%= entry.chronicle_text %>
   </span>
   <% if entry.cancel.blank? %>
-    <span class="btn  btn-danger col-md-2">
+    <span class="btn  btn-danger btn-xs col-md-1">
       <%= link_to 'Storno', cancel_earning_path(entry), :method => :post %>
     </span>
   <% end %>

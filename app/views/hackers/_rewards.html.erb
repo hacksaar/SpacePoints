@@ -1,18 +1,9 @@
-
-
 <% rewards.in_groups_of(10) do |grouped_rewards| %>
   <div class="row">
-    <% grouped_rewards.each do |reward| %>
-      <% if reward.present? %>
-        <div class="well col-md-2">
-          <h4>
-            <%= reward.title %>
-          </h4>
-          <!-- TODO: should be replaced with paperclip gem -->
-          <span class="glyphicon <%= reward.image_url %>"> </span>
-          <%= reward.points %>
-        </div>
-      <% end %>
-    <% end %>
+    <%= render({
+    :partial    => 'hackers/rewards/show',
+    :collection => grouped_rewards.compact,
+    :as         => :reward
+    }) %>
   </div>
 <% end %>

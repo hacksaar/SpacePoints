@@ -12,3 +12,23 @@
  *= require bootstrap
  *= require_tree .
  */
+
+.quest-button, .reward-button{
+  white-space: normal !important;
+}
+
+.reward-button{
+  min-height: 91px;
+}
+
+.hacker-flair, .btn{
+/*  margin-left: 5px; */
+}
+
+.hacker-flair:first, .btn:first{
+  margin-left: 0px !important;
+}
+
+.btn-danger a{
+  color: #FFF;
+}

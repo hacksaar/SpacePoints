@@ -1,0 +1,20 @@
+<a href="<%= hacker_path(hacker) %>">
+  <div class="well hacker-flair col-md-2">
+    <div class="row">
+      <div class="col-xs-6">
+        <%= image_tag gravatar_url_for(hacker.email, 80) %>
+      </div>
+      <div class="col-xs-6">
+        <%= hacker.nickname %> 
+        <br/>
+        <span class="badge points recent_earned_points" title="Kürzlich verdiente Punkte">
+          <%= hacker.recent_earned_points %> 
+        </span>
+        <br/>
+        <span class="badge points all_earned_points" title="Alle Punkte">
+          <%= hacker.all_earned_points %> 
+        </span>
+      </div>
+    </div>
+  </div>
+</a>

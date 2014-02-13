@@ -1,6 +1,5 @@
 <div class="list-group-item list-group-item-warning row">
-  <span class="col-md-1"></span>
-  <span class="col-md-1">
+  <span class="col-md-1 col-md-offset-1">
     +<%= entry.points %>
   </span>
   <span class="col-md-2">
@@ -10,7 +9,7 @@
     <%= entry.chronicle_text %>
   </span>
   <% if entry.cancel.blank? %>
-  <span class="btn  btn-danger col-md-2">
+  <span class="btn  btn-danger btn-xs col-md-1">
     <%= link_to 'Storno', cancel_redemption_path(entry), :method => :post %>
   </span>
 <% end %>

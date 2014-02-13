@@ -1,5 +1,5 @@
 <div class="page-header">
-  <%= image_tag(gravatar_url_for(@hacker.email)) %> <%= @hacker.nickname %>
+  <h1><%= image_tag(gravatar_url_for(@hacker.email)) %> <%= @hacker.nickname %></h1>
 </div>
 
 <div class="row">
@@ -32,10 +32,16 @@
 </div>
 
 <h2>Punkte erarbeitet</h2>
-<%= render :partial => 'quests',    :locals => {:quests  => @quests} %>
+<div class="container-fluid">
+  <%= render :partial => 'quests',    :locals => {:quests  => @quests} %>
+</div>
 
 <h2>Punkte einlösen</h2>
-<%= render :partial => 'rewards',   :locals => {:rewards => @rewards} %>
+<div class="container-fluid">
+  <%= render :partial => 'rewards',   :locals => {:rewards => @rewards} %>
+</div>
 
 <h2>Verlauf</h2>
-<%= render :partial => 'chronicle', :locals => {:chronicle  => @chronicle}  %>
+<div class="container-fluid">
+  <%= render :partial => 'chronicle', :locals => {:chronicle  => @chronicle}  %>
+</div>

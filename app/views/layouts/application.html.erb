@@ -1,19 +1,32 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>SpacePoints</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <nav class="navbar navbar-inverse" role="navigation">
-  <a class="navbar-brand" href="/">SpacePoints</a>
-  </nav>
-  <div class="container">
-  <%= yield %>
-  </div>
+  <head>
+    <title>SpacePoints</title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">SpacePoints</a>
+    </div>
+    </nav>
+    <div class="container">
+      <%= yield %>
+    </div>
 
-  <%= login_or_username %> | <%= link_to 'Historie', chronicle_path %>
-</body>
+    <p>&nbsp;</p>
+
+    <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+    <div class="container">
+       <ul class="nav navbar-nav">
+         <li><%= login_or_username %> </li>
+         <li class="divider"></li>
+         <li><%= link_to 'Historie', chronicle_path %></li>
+       </ul>
+     </div>
+    </div>
+    </nav>
+  </body>
 </html>
