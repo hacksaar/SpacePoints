@@ -18,7 +18,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -37,7 +37,7 @@ end
 group :development do
   gem 'rails-erd'
   gem 'ffaker'
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', :require => false
   gem 'rspec-rails'
   gem 'guard-rspec'
   gem 'guard-bundler'
