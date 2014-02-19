@@ -8,6 +8,11 @@ class Quest < ActiveRecord::Base
 
   validates :points, :numericality => {:greater_than => 0}
 
-  def solve(hacker)
-  end
+  def solve(hacker, user = nil)
+    hacker.earnings.create({
+      :user => user,
+      :points => self.points,
+      :chronicle_text => self.description
+    })
+  end # #solve
 end

@@ -3,7 +3,15 @@ SpacePunkte::Application.routes.draw do
   root :to => 'hackers#index'
 
 
-  resources :hackers
+  resources :hackers do
+    member do
+      resources :quests, :only => [] do
+        member do
+          post :solve
+        end
+      end
+    end
+  end
 
   resource :chronicle, :only => [:show]
 
