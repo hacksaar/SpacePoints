@@ -16,19 +16,20 @@ class Hacker < ActiveRecord::Base
 
   # Summe aller jemals eingelösten Punkte
   def all_redeemed_points
-    return Redemption.sum('points')
+    return redemptions.where("id not in (select subject_id from cancels where subject_type = 'Redemption')").sum('points')
   end
 
   # Summe aller in den letzten 90 Tagen verdienten Punkte
   def recent_earned_points
-    return Reward.where('created_at >= ?', Date.today - 90).sum('points')
+    return earnings.where("id not in (select subject_id from cancels where subject_type = 'Earning')").
+        where('created_at >= ?', Date.today - 90).sum('points')
   end
 
   # Summe aller jemals verdienten Punkte, 
   # unabhängig davon, ob diese bereits 
   # eingelöst wurden oder nicht
   def all_earned_points
-    return Reward.sum('points')
+    return earnings.sum('points')
   end
   
   # Verbleibendes Guthaben, d.h. alle jemals verdienten Punkte
