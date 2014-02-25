@@ -1,4 +1,7 @@
 <div class="list-group-item row list-group-item-success">
+  <span class="col-md-1">
+    <%= image_tag gravatar_url_for(entry.hacker.email, 24) %>
+  </span>
   <span class="col-md-2">
     +<%= entry.points %>
   </span>

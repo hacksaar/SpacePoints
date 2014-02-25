@@ -3,7 +3,9 @@ class RedemptionsController < ApplicationController
   before_filter :set_redemption, :only => [:cancel]
 
   def cancel
-    @redemption.cancel!
+    if @redemption.cancel!
+      flash[:warning] = "#{@redemption.points} storniert"
+    end
 
     redirect_to :back
   end

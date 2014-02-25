@@ -1,6 +1,9 @@
 # A sample Guardfile
 # More info at https://github.com/guard/guard#readme
+#
 
+notification(:tmux , {
+})
 guard(
  :rspec 
 ) do
@@ -24,3 +27,9 @@ guard(
   watch(%r{^spec/acceptance/steps/(.+)_steps\.rb$})   { |m| Dir[File.join("**/#{m[1]}.feature")][0] || 'spec/acceptance' }
 end
 
+
+guard :bundler do
+  watch('Gemfile')
+  # Uncomment next line if your Gemfile contains the `gemspec' command.
+  # watch(/^.+\.gemspec/)
+end

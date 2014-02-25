@@ -1,14 +1,19 @@
-<div class="btn btn-default btn-lg col-md-2 quest-button">
-  <div class="row">
-    <div class="col-xs-2">
-      <!-- TODO: should be replaced with paperclip gem -->
-      <span class="glyphicon <%= quest.image_url %>"> </span>
-    </div>
-    <div class="col-xs-7">
-      <%= quest.title %>
-    </div>
-    <div class="col-xs-2">
-      <%= quest.points %>
+<a
+  data-method="post" rel="nofollow" 
+  href="<%= solve_quest_path(:hacker => hacker, :quest => quest) %>"
+  >
+  <div class="btn btn-default btn-lg col-md-2 quest-button">
+    <div class="row">
+      <div class="col-xs-2">
+        <!-- TODO: should be replaced with paperclip gem -->
+        <span class="glyphicon <%= quest.image_url %>"> </span>
+      </div>
+      <div class="col-xs-7">
+        <%= quest.title %>
+      </div>
+      <div class="col-xs-2">
+        <%= quest.points %>
+      </div>
     </div>
   </div>
-</div>
+</a>

@@ -12,7 +12,11 @@ class ChroniclesController < ApplicationController
 
   def set_chronicle
     @chronicle = (Earning.all + Redemption.all).sort do |a,b|
-      a.created_at <=> b.created_at
+      b.created_at <=> a.created_at
     end
+
+    @chronicle = Kaminari.paginate_array(
+      @chronicle
+    ).page(params[:page]).per(20)
   end
 end

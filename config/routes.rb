@@ -9,7 +9,13 @@ SpacePunkte::Application.routes.draw do
         member do
           post :solve
         end
-      end
+      end # quests
+
+      resources :rewards, :only => [] do
+        member do
+          post :earn
+        end
+      end # rewards
     end
   end
 

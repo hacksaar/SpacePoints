@@ -29,12 +29,16 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+# Pagination Plugin
+gem 'kaminari'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
 
 group :development do
+  gem 'database_cleaner'
   gem 'rails-erd'
   gem 'ffaker'
   gem 'factory_girl_rails', :require => false

@@ -6,7 +6,9 @@ class EarningsController < ApplicationController
 
   # TODO user should be set
   def cancel
-    @earning.cancel!(current_hacker)
+    if @earning.cancel!(current_hacker)
+      flash[:warning] = "#{@earning.points} storniert"
+    end
     redirect_to :back
   end
 

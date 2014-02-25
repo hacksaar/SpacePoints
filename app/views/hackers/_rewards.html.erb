@@ -3,7 +3,8 @@
     <%= render({
     :partial    => 'hackers/rewards/show',
     :collection => grouped_rewards.compact,
-    :as         => :reward
+    :as         => :reward,
+    :locals     => {:hacker => hacker}
     }) %>
   </div>
 <% end %>

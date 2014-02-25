@@ -6,11 +6,15 @@ module ApplicationHelper
     "http://gravatar.com/avatar/#{hash}?s=#{size}"
   end
 
-  def login_or_username
+  def li_login_or_userpanel
     if current_hacker.blank?
-      link_to 'Einloggen', new_hacker_session_path 
+      content_tag(:li, link_to('Einloggen', new_hacker_session_path))
     else
-      link_to current_hacker.nickname, current_hacker
+      concat(
+        content_tag(:li, link_to(current_hacker.nickname, current_hacker))
+      )
+
+      content_tag(:li, link_to('Ausloggen', destroy_hacker_session_path, :method => :delete))
     end
   end
 end

@@ -42,7 +42,7 @@ class HackersController < ApplicationController
 
   def set_chronicle
     @chronicle = (@hacker.earnings.all + @hacker.redemptions.all).sort do |a,b|
-      a.created_at <=> b.created_at
+      b.created_at <=> a.created_at
     end
   end
 end
