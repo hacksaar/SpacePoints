@@ -19,6 +19,11 @@ describe Redemption do
   let(:hacker) do
     FactoryGirl.create(:hacker)
   end
+
+  before do
+    Redemption.any_instance.stub(:hacker_remaining_points).and_return(700)
+  end
+
   context 'associations' do
     it 'should have a user which is instance of hacker' do
       redemption.build_user.should be_kind_of(Hacker)

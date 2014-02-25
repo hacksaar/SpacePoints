@@ -14,4 +14,14 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
+//= require bootstrap/tooltip
+//= require bootstrap/popover
 //= require_tree .
+
+jQuery(document).ready(function(){
+  jQuery('[data-popup-top]').popover({
+    placement: 'top',
+    trigger:   'hover',
+    delay:    {show: 1000, hide: 0}
+  });
+});

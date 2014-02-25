@@ -1,0 +1,5 @@
+de:
+  activerecord:
+    attributes:
+      redemption:
+        hacker_remaining_points: Verbleibende Punkte
