@@ -12,6 +12,7 @@ class Quest < ActiveRecord::Base
     hacker.earnings.create({
       :user => user,
       :points => self.points,
+      :quest  => self,
       :chronicle_text => self.title
     })
   end # #solve

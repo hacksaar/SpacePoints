@@ -14,9 +14,10 @@ describe Quest do
 
   describe '#solve' do
     it 'should produce a reward' do
-      hacker.reload.should have(0).earnings
+      hacker.should have(0).earnings
       subject.solve(hacker)
       hacker.reload.should have(1).earnings
+      hacker.earnings.first.quest.should be_eql(subject)
     end
 
     it 'should produce text into reward'
