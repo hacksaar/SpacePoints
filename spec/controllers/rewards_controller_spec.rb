@@ -16,6 +16,7 @@ describe RewardsController do
 
   before do
     request.env['HTTP_REFERER'] = 'test.de'
+    Redemption.any_instance.stub(:hacker_remaining_points).and_return(700)
   end
 
   context 'not logged in' do

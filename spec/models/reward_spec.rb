@@ -9,13 +9,31 @@ describe Reward do
     FactoryGirl.create(:user)
   end
 
+  let(:earning) do
+    FactoryGirl.create(:earning, {
+      :hacker => hacker
+    })
+  end
+
   subject do
     FactoryGirl.create(:reward)
   end
 
-  it 'should earn a reward' do
+  it 'should not earn a reward' do
     hacker.should have(0).redemptions
     subject.earn(hacker)
-    hacker.reload.should have(1).redemptions
-  end
+    hacker.reload.should have(0).redemptions
+  end 
+
+  context 'with earning' do
+    before do
+      earning
+    end
+
+    it 'should earn a reward' do
+      hacker.should have(0).redemptions
+      subject.earn(hacker)
+      hacker.reload.should have(1).redemptions
+    end 
+  end # with earning
 end

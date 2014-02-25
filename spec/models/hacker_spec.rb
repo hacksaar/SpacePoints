@@ -7,6 +7,7 @@ describe Hacker do
     FactoryGirl.create(:hacker)
   end
 
+
   let(:redemptions) do
     [FactoryGirl.create(:redemption, {
         :hacker => hacker, :points => 10
@@ -24,6 +25,7 @@ describe Hacker do
 
   describe '#all_redeemed_points' do
     before do
+      Redemption.any_instance.stub(:hacker_remaining_points).and_return(700)
       redemptions
     end
 
