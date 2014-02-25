@@ -31,19 +31,19 @@ Quest.create({
 })
 
 Reward.create({
-  :title => 'Roter Artikel einlösen (Getränk)',
+  :title => 'Roter Artikel (Getränk)',
   :points => 15,
   :image_url => 'icon-beer'
 })
 
 Reward.create({
-  :title => 'Gelber Artikel einlösen (Snack)',
+  :title => 'Gelber Artikel (Snack)',
   :points => 10,
   :image_url => 'icon-drink'
 })
 
 Reward.create({
-  :title => 'Blauer Artikel einlösen (Mini-Snack)',
+  :title => 'Blauer Artikel (Mini-Snack)',
   :points => 5
 })
 

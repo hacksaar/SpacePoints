@@ -13,9 +13,9 @@ class QuestsController < ApplicationController
 
   def solve
     if @quest.solve(@hacker, current_hacker)
-      flash[:success] = 'Quest abgeschloßen'
+      flash[:success] = "#{@quest.title}: #{@hacker.nickname} wurden #{@quest.points} Punkte gutgeschrieben."
     else
-      flash[:error]   = 'Quest konnte nicht abgeschloßen werden'
+      flash[:error]   = "Die Punkte für #{@quest.title} konnten nicht gutgeschrieben werden."
     end
     redirect_to :back
   end

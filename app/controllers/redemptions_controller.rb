@@ -4,7 +4,7 @@ class RedemptionsController < ApplicationController
 
   def cancel
     if @redemption.cancel!
-      flash[:warning] = "#{@redemption.points} storniert"
+      flash[:warning] = "#{@redemption.reward.title} vom #{I18n.l(@redemption.created_at, :format => :short)} storniert"
     end
 
     redirect_to :back

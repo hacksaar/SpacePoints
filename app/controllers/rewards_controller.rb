@@ -14,9 +14,9 @@ class RewardsController < ApplicationController
   def earn
     redemption = @reward.earn(@hacker, current_hacker)
     if redemption.valid?
-      flash[:success] = 'Reward eingelöst'
+      flash[:success] = "#{redemption.reward.title} eingelöst"
     else
-      flash[:error]   = "Reward konnte nicht eingelöst werden\n"
+      flash[:error]   = "#{redemption.reward.title} konnte nicht eingelöst werden\n"
       flash[:error]   << redemption.errors.full_messages * "\n"
     end
     redirect_to :back
