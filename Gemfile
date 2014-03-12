@@ -12,6 +12,18 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'bootstrap-sass'
 gem 'devise'
 
+# versioning ActiveRecords
+gem 'vestal_versions'
+
+# Admin Panel
+gem 'activeadmin', github: 'gregbell/active_admin'
+
+# Authorisation
+gem 'cancan'
+
+# Store Attachments
+gem 'paperclip'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
@@ -47,6 +59,7 @@ group :development do
   gem 'guard', :git => 'https://github.com/guard/guard.git'
   gem 'guard-rspec'
   gem 'guard-bundler'
+  gem 'zeus'
 end
 
 # Use ActiveModel has_secure_password

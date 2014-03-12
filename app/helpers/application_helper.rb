@@ -28,5 +28,14 @@ module ApplicationHelper
       html << "Anonymous"
     end
     return escape_javascript(html)#.html_safe
-  end
+  end # #triggered_by
+
+  def cancel_button
+    html = '<button type="button" class="btn btn-danger btn-xs">'
+    html << '<span class="col-md-1">'
+    html << 'Storno'
+    html << '</span>'
+    html << '</button>'
+    return html.html_safe
+  end # #cancel_button
 end

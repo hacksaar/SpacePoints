@@ -14,9 +14,7 @@
     <%= entry.chronicle_text %>
   </span>
   <% if entry.cancel.blank? %>
-  <span class="btn  btn-danger btn-xs col-md-1">
-    <%= link_to 'Storno', cancel_redemption_path(entry), :method => :post %>
-  </span>
+    <%= link_to cancel_button, cancel_redemption_path(entry), :method => :post %>
 <% end %>
 </div>
 <% if entry.cancel.present? %>
