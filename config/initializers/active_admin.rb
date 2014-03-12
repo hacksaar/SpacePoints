@@ -1,5 +1,8 @@
 ActiveAdmin.setup do |config|
 
+  config.before_filter do
+    params.permit!
+  end
   # == Site Title
   #
   # Set the title that is displayed on the main layout

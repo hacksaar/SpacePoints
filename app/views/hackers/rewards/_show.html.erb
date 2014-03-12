@@ -6,7 +6,9 @@
     <div class="row">
       <div class="col-xs-2">
         <!-- TODO: should be replaced with paperclip gem -->
-        <span class="glyphicon <%= reward.image_url %>"> </span>
+        <span class="glyphicon">
+          <%=image_tag reward.image.url(:thumb) %>
+        </span>
       </div>
       <div class="col-xs-7">
         <%= reward.title %>

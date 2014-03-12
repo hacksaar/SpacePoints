@@ -12,34 +12,29 @@ Reward.delete_all
 
 Quest.create({
   :title  => 'Küche aufgeräumt',
-  :points => 50,
-  :image_url => 'glyphicon-fire'
+  :points => 50
 })
 
 
 Quest.create({
   :title  => 'Müll rausgebracht',
-  :points => 1,
-  :image_url => 'glyphicon-trash'
+  :points => 1
 })
 
 
 Quest.create({
   :title  => 'Getränke gekauft',
-  :points => 5,
-  :image_url => 'glyphicon-glass'
+  :points => 5
 })
 
 Reward.create({
   :title => 'Roter Artikel (Getränk)',
-  :points => 15,
-  :image_url => 'icon-beer'
+  :points => 15
 })
 
 Reward.create({
   :title => 'Gelber Artikel (Snack)',
-  :points => 10,
-  :image_url => 'icon-drink'
+  :points => 10
 })
 
 Reward.create({

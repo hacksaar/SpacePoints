@@ -51,6 +51,8 @@ group :doc do
 end
 
 group :development do
+  gem 'capistrano'
+  gem 'better_errors'
   gem 'database_cleaner'
   gem 'rails-erd'
   gem 'ffaker'

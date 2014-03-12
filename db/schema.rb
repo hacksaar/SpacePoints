@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140312192849) do
+ActiveRecord::Schema.define(version: 20140312201127) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -89,9 +89,12 @@ ActiveRecord::Schema.define(version: 20140312192849) do
     t.integer  "points"
     t.string   "title"
     t.string   "description"
-    t.string   "image_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "redemptions", force: true do |t|
@@ -107,10 +110,13 @@ ActiveRecord::Schema.define(version: 20140312192849) do
   create_table "rewards", force: true do |t|
     t.integer  "points"
     t.string   "title"
-    t.string   "image_url"
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
 end
